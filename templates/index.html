@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+  <title>Exchange Rates</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="container ">
+      <div class="row align-items-stretch justify-content-center no-gutters">
+        <div class="col-md-7 ">
+          <div class="form h-100 contact-wrap p-5 ">
+            <h3 class="text-center">Consult Real-Time Currency Exchange Rates</h3>
+            <br></br>
+            <form class="mb-5 " method="post" id="contactForm" name="contactForm" action="/convert">
+              <div class="row justify-content-center">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="" class="col-form-label ">Amount</label>
+                  <input type="text" class="form-control" name="var1" id="var1"
+                    placeholder="{{ request.form['var1'] }}">
+                </div>
+
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="" class="col-form-label">From Currency</label>
+                  <select name="From" id="currencyFrom" class="form-control">
+                    <option value="USD">USD</option>
+                    <option value="MXN">MXN</option>
+                    <option value="INR">INR</option>
+                    <option value="IDR">IDR</option>
+                    <option value="SGD">SGD</option>
+                    <option value="RUB">RUB</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CZK">CZK</option>
+                    <option value="BRL">BRL</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CNY">CNY</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="row justify-content-center">
+                <div class="col-md-6 form-group mb-3">
+                  <label for="" class="col-form-label">To Currency</label>
+                  <select name="To" id="currencyTo" class="form-control">
+                    <option value="USD">USD</option>
+                    <option value="MXN">MXN</option>
+                    <option value="INR">INR</option>
+                    <option value="IDR">IDR</option>
+                    <option value="SGD">SGD</option>
+                    <option value="RUB">RUB</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CZK">CZK</option>
+                    <option value="BRL">BRL</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CNY">CNY</option>
+                    <option value="EUR">EUR</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-5 justify-content-center">
+                <div class="col-md-12 form-group mb-3 justify-content-center">
+                  <label for="message" class="col-form-label justify-content-center"></label>
+                  <div class="row mb-5 justify-content-center">
+                    {{ var3 }}  {{ var2 }} {{ request.form['To'] }}
+
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-5 form-group text-center">
+                  <input type="submit" value="Convert" class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
