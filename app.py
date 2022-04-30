@@ -4,18 +4,7 @@ from flask import request
 
 app = Flask(__name__)
 
-@app.route("/")
-def index():
-    try:
-       c = CurrencyRates()
-       convert = c.convert('USD', 'MXN', 0)
-    except:
-       return render_template('index.html')
-
-    return render_template('index.html', var1=0, var2=convert)
-
-
-@app.route("/convert", methods=['GET','POST'])
+@app.route("/", methods=['GET','POST'])
 def convert():
     try:
       if request.method == 'POST':
